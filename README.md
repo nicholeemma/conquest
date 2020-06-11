@@ -8,6 +8,12 @@
 
 Users fill in request related information, with submit button clicked, the request will be stored as an item in the database, meanwhile, the information will be transformed in JSON format and post to Conquest "create_request" API. If the post is successful, requestID will be returned. The requestID and picture address will be transformed in JSON format and post to Conquest"add_document" API. After that a picture is linked to the request in success. The users can see the what did they input in the below "request information table".
 
+### Demo
+
+Web app demo for create a request https://youtu.be/Y4eUWJ544Oo
+
+Check the result from the mobile App https://youtu.be/9yKiXP4yq5w
+
 ### Tech-Stack
 
 - Python Django
