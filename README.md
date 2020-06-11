@@ -25,6 +25,18 @@ Check the result from the mobile App https://youtu.be/9yKiXP4yq5w
 1. Under the path \conquest\conquestapp, open console, run " python manage.py runserver 8100" (Before this, you might need to pip install python and django)
 2. Open the "http://localhost:8100/" in the browser
 
+Relevant Code:
+
+Front end: https://github.com/nicholeemma/conquest/tree/master/conquestrequest/templates/index.html
+
+Back end: **view.py** demonstrates how the data interact, post to API and show on the webpage
+
+**model.py** data schema
+
+**form.py** form validation
+
+**url.py** directs which function corresponds to the page
+
 ### What can be improved in the future
 
 1. Form validation (For now, I used a content length limit as one rule of form. In the future, the form can validate whether the picture link is accessible and workable)
