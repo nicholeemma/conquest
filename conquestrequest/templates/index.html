@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Conquest- Request</title>
+  {% load static %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div django-app="TaskManager">        
+        <div class="container">
+                <div class="content">
+                
+                <h1><center>A Django Web App</center></h1>
+                <p class="flow-text">This app allows you to create a request through Conquest API and attach a picture to that request</p>
+                <h2>Add A Request</h2>
+                <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %} <!-- csrf token for basic security -->
+                    <div class="inputContainer">
+                        <label for="name"><h4>Name</h4>Limit length: 30</label>
+                        <input type="text" id="name" class="taskName" placeholder="Request's name here" name="name" required>
+                        
+                    </div>
+                    <div class="inputContainer">
+                        <label for="description"><h4>Description</h4>Limit length:100</label>
+                        <input type="text" id="description" class="taskName" placeholder="description here" name="description" required>
+                        
+                    </div>
+                    <div class="inputContainer">
+                        <label for="filelink"><h4>Picture Link</h4>Supported scheme (blob://, file://, https://, conquest://, trim://)</label>
+                        <input type="text" id="filelink" class="taskName" placeholder="Picture link here" name="filelink" required>
+                        
+                    </div>
+                    <div class="inputContainer">
+                        E.g You can copy paste this workable link <br>
+                        <b>https://upload.wikimedia.org/wikipedia/commons/b/b4/JPEG_example_JPG_RIP_100.jpg</b>
+                    </div>
+                    <div class="inputContainer" style="visibility: hidden;">
+                        You will be able to upload a picture from your desktop in the future edition
+                        <input type="file" name="myfile" disabled>
+                    </div>
+                    <button style="width: 100%; background-color:black" class="Add btn" name="ItemAdd" type="submit">Add Item</button>
+                </form>
+                <p style="font-size: 20px; color: indianred;">
+                    {{show}}
+                </p>
+                <br>
+                <hr>
+                <br>
+                <h2>Request Information Table</h2>
+                <table class="highlight responsive-table centered">
+                   
+                    <thead>
+                        <tr>
+                            <th style="width: 10%; ">RequestID</th>
+                            <th style="width: 20%; ">Name</th>
+                            <th style="width: 35%; ">Description</th>
+                            <th style="width: 35%; ">Picture</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                {% for item in items %}
+                <tr>
+                      
+                      <td>
+                          {{item.requestID}}
+                      </td>
+                      <td> 
+                          {{item.name}}                          
+                      </td>
+                      <td>
+                        {{item.description}}         
+                      </td>
+                      <td>
+                          <img class="menu_pic" src = "{{item.picture}}" style="width: 80px; height:80px;">
+                          <p>
+                              location: {{item.picture}}
+                          </p>           
+                      </td>
+                </tr>
+                    {% endfor %}
+            </tbody>
+                </table>
+                </div><!-- content -->
+        </div><!-- container -->
+    </div>
+</body>
+</html>
