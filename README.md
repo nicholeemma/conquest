@@ -37,6 +37,8 @@ Back end: **view.py** demonstrates how the data interact, post to API and show o
 
 **url.py** directs which function corresponds to the page
 
+**Attention:** The token can be out of date, you might need to update the token in view.py line 44
+
 ### What can be improved in the future
 
 1. Form validation (For now, I used a content length limit as one rule of form. In the future, the form can validate whether the picture link is accessible and workable)

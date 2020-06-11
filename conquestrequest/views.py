@@ -41,6 +41,7 @@ def index(request):
 
                 # create a request based on the input information
                 url = 'https://developer-demo.australiaeast.cloudapp.azure.com/api/requests/create_request'
+                # token can be changed here
                 headers = {"Authorization":"Bearer A4Fo2/hpXIWeLnS6dg0Nqo9mVGo=","Accept":"application/json","Content-Type":"multipart/form-data"}
                 playloadRequest = {"ChangeSet": {
                             "Changes": [       
