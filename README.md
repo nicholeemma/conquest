@@ -1,4 +1,4 @@
-# **Raise Request through Conquest API**
+# **Raise a Request through Conquest API**
 
 #### An App allows user to create a request and attach a picture to that request.
 
